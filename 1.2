@@ -1,0 +1,10 @@
+'''python2'''
+'''Fixed XOR'''
+'''function that takes two equal-length buffers and produces their XOR combination'''
+print 'Enter the two strings'
+a=input()
+z=input()
+c=hex(int(a,16)^int(z,16))
+d=c.replace('0x','')
+d=d.replace('L','')
+print d
