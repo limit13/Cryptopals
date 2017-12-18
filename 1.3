@@ -1,0 +1,19 @@
+'''Python3'''
+'''Single-byte XOR cipher'''
+'''has been XOR'd against a single character. Find the key, decrypt the message'''
+import binascii
+print('Enter the hex string')
+eta='ETAOIN SHRDLUetaoinshrdlu'
+z=0
+secret=''
+a=input()
+b=binascii.unhexlify(a)
+for i in range(256):
+	c=''.join(chr(j^i)for j in b)
+	x=0
+	for k in eta:
+		x=x+c.count(k)
+	if x>z:
+		z=x
+		secret=c
+print(secret)
