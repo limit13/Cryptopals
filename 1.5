@@ -1,0 +1,18 @@
+from itertools import cycle
+key=['I','C','E']
+cyc=cycle(key)
+a='''Burning 'em, if you ain't quick and nimble
+I go crazy when I hear a cymbal'''
+print('The message to be encoded is:\n'+a+'\n')
+l=len(a)
+x=0
+q=''
+for i in cyc:
+	if x>=l:
+		break
+	z=str('{0:x}'.format(ord(a[x])^ord(i)))
+	if len(z)!=2:
+		z='0'+z
+	q=q+z	
+	x=x+1
+print(q)
